@@ -20,7 +20,7 @@ import java.util.HashMap;
 
 
 /**
- program were built based on this tutorial
+ program built based on this tutorial
  http://www.androidhive.info/2012/01/android-json-parsing-tutorial/
 
  */
@@ -41,8 +41,7 @@ public class MainActivity extends ListActivity {
     private static final String PWD = "pwd";
 
     /**
-     read url (http://stackoverflow.com/a/7467629)
-
+     readUrl (http://stackoverflow.com/a/7467629)
      */
     private static String readUrl(String urlString) throws Exception {
         BufferedReader reader = null;
@@ -67,6 +66,7 @@ public class MainActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         // Calling async task to get json
         new GetData().execute();
@@ -113,9 +113,16 @@ public class MainActivity extends ListActivity {
              * */
             ListAdapter adapter = new SimpleAdapter(
                     MainActivity.this, dataList,
-                    R.layout.list_item, new String[]{ID, NAME,
-                    PWD}, new int[]{R.id.id,
-                    R.id.name, R.id.pwd});
+                    R.layout.list_item,
+                    new String[]{
+                            ID,
+                            NAME,
+                            PWD},
+                    new int[]{
+                            R.id.id,
+                            R.id.name,
+                            R.id.pwd})
+                    ;
 
             setListAdapter(adapter);
         }
